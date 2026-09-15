@@ -15,10 +15,13 @@ export default async function Home() {
     <>
       <div className="hero">
         <div className="heroart">
-          <div dangerouslySetInnerHTML={{ __html: escena("hero-comarca-andina") }} />
+          {cfg.portada_url
+            ? <img className="heroimg" src={cfg.portada_url} alt="El Bolsón y el cerro Piltriquitrón" />
+            : <div dangerouslySetInnerHTML={{ __html: escena("hero-comarca-andina") }} />}
           <div className="vin" />
           <div className="heroc">
             <div className="wrap">
+              {cfg.logo_url ? <img className="herologo" src={cfg.logo_url} alt="Ester Cortez Propiedades" /> : null}
               <div className="eyebrow">El Bolsón · Lago Puelo · El Hoyo · Epuyén</div>
               <h1>Encontrá tu lugar<br />en <em>la Comarca Andina</em></h1>
               <p>Casas con vista al Piltriquitrón, chacras junto al río Azul, lotes con bosque propio. Te acompañamos desde la primera visita hasta la escritura.</p>

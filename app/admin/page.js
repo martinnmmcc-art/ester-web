@@ -102,7 +102,8 @@ export default function Admin() {
   async function guardarCfg() {
     const q = await supabase.from("inm_config").update({
       whatsapp: cfg.whatsapp, telefono: cfg.telefono, email: cfg.email,
-      direccion: cfg.direccion, mapa_url: cfg.mapa_url, nosotros: cfg.nosotros
+      direccion: cfg.direccion, mapa_url: cfg.mapa_url, nosotros: cfg.nosotros,
+      portada_url: cfg.portada_url, logo_url: cfg.logo_url
     }).eq("id", 1);
     aviso(q.error ? "Error: " + q.error.message : "Datos actualizados");
   }
@@ -173,6 +174,8 @@ export default function Admin() {
               <div className="field"><label>Email</label><input value={cfg.email || ""} onChange={(e) => setCfg({ ...cfg, email: e.target.value })} /></div>
               <div className="field"><label>Dirección</label><input value={cfg.direccion || ""} onChange={(e) => setCfg({ ...cfg, direccion: e.target.value })} /></div>
               <div className="field"><label>Link del mapa</label><input value={cfg.mapa_url || ""} onChange={(e) => setCfg({ ...cfg, mapa_url: e.target.value })} /></div>
+              <div className="field"><label>Foto de portada (URL)</label><input placeholder="https://…" value={cfg.portada_url || ""} onChange={(e) => setCfg({ ...cfg, portada_url: e.target.value })} /></div>
+              <div className="field"><label>Logo (URL)</label><input placeholder="https://…" value={cfg.logo_url || ""} onChange={(e) => setCfg({ ...cfg, logo_url: e.target.value })} /></div>
               <div className="field"><label>Texto de “Nosotros”</label><textarea rows="5" value={cfg.nosotros || ""} onChange={(e) => setCfg({ ...cfg, nosotros: e.target.value })} /></div>
               <button className="btn primary block" onClick={guardarCfg}>Guardar datos</button>
             </div>

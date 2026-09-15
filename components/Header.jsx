@@ -10,10 +10,16 @@ export default function Header({ cfg }) {
     <header className="site">
       <div className="wrap hdr">
         <Link className="logo" href="/">
-          <span className="mark">
-            <svg viewBox="0 0 24 24"><path d="M12 3 2 11h3v9h6v-6h2v6h6v-9h3L12 3z" /></svg>
-          </span>
-          <span><b>Ester Cortez</b><small>Propiedades</small></span>
+          {cfg.logo_url ? (
+            <img className="hdrlogo" src={cfg.logo_url} alt="Ester Cortez Propiedades" />
+          ) : (
+            <>
+              <span className="mark">
+                <svg viewBox="0 0 24 24"><path d="M12 3 2 11h3v9h6v-6h2v6h6v-9h3L12 3z" /></svg>
+              </span>
+              <span><b>Ester Cortez</b><small>Propiedades</small></span>
+            </>
+          )}
         </Link>
         <nav className="desk">
           <Link href="/#propiedades">Propiedades</Link>

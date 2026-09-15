@@ -70,6 +70,7 @@ export default async function RootLayout({ children }) {
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <a className="link" href={"mailto:" + cfg.email}>{cfg.email}</a>
               <a className="link" href={"tel:+" + cfg.whatsapp}>{cfg.telefono}</a>
+              <a className="link" href="/admin">Administrar</a>
             </div>
           </div>
         </footer>
