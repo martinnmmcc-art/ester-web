@@ -1,5 +1,5 @@
 import "./globals.css";
-import { getConfig, SITE_URL } from "../lib/supabase";
+import { getConfig, SITE_URL, MODO_DEMO } from "../lib/supabase";
 import Header from "../components/Header";
 import Fab from "../components/Fab";
 
@@ -19,7 +19,10 @@ export const metadata = {
     title: "Ester Cortez Propiedades — Inmobiliaria en El Bolsón",
     description: "Casas, chacras, lotes y alquileres en la Comarca Andina."
   },
-  robots: { index: true, follow: true }
+  robots: MODO_DEMO
+    ? { index: false, follow: false, nocache: true,
+        googleBot: { index: false, follow: false } }
+    : { index: true, follow: true }
 };
 
 export default async function RootLayout({ children }) {
@@ -67,7 +70,6 @@ export default async function RootLayout({ children }) {
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <a className="link" href={"mailto:" + cfg.email}>{cfg.email}</a>
               <a className="link" href={"tel:+" + cfg.whatsapp}>{cfg.telefono}</a>
-              <a className="link" href="/admin">Administrar</a>
             </div>
           </div>
         </footer>
