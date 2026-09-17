@@ -1,7 +1,7 @@
 :root{
-  --bg:#fffaf3; --bg2:#fff4e6; --surface:#ffffff; --surface-2:#fdf1e3; --border:#f0e1cc;
+  --bg:#fbf8ef; --bg2:#f5f0e2; --surface:#ffffff; --surface-2:#f3eddd; --border:#e6ddc8;
   --text:#2b2018; --muted:#7c6a5b;
-  --agua:#0e9494; --agua-2:#14b3b3; --sol:#f4823a; --sol-2:#ffb547; --cielo:#5ab6e8; --bosque:#2f7d5d; --uva:#7b5ea7;
+  --agua:#2f7a6c; --agua-2:#4b9c8a; --sol:#c94a3f; --sol-2:#e4776a; --cielo:#5ab6e8; --bosque:#2f7d5d; --uva:#7b5ea7;
   --shadow:0 2px 6px rgba(120,80,40,.06),0 14px 34px rgba(120,80,40,.10);
   --shadow-sm:0 1px 3px rgba(120,80,40,.08);
   --r:20px; --maxw:1200px;
@@ -31,7 +31,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0;lett
 header.site{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .hdr{display:flex;align-items:center;gap:12px;height:68px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
-.logo .mark{width:40px;height:40px;border-radius:13px;background:linear-gradient(140deg,var(--sol-2),var(--sol) 45%,var(--agua));display:grid;place-items:center;flex:0 0 auto;box-shadow:0 4px 12px rgba(244,130,58,.3)}
+.logo .mark{width:40px;height:40px;border-radius:13px;background:linear-gradient(140deg,var(--sol-2),var(--sol) 45%,var(--agua));display:grid;place-items:center;flex:0 0 auto;box-shadow:0 4px 12px rgba(201,74,63,.28)}
 .logo .mark svg{width:22px;height:22px;fill:#fff}
 .logo b{font-family:var(--serif);font-size:17px;font-weight:700;display:block;line-height:1.05;white-space:nowrap}
 .logo small{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--sol);display:block;font-weight:600}
@@ -42,8 +42,8 @@ nav.desk a:hover{color:var(--text)}nav.desk a:hover::after{right:0}
 .hdr-cta{margin-left:auto;display:flex;gap:8px;align-items:center}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid var(--border);background:var(--surface);border-radius:999px;padding:11px 18px;font-size:14.5px;font-weight:600;cursor:pointer;text-decoration:none;transition:.16s;min-height:46px}
 .btn:hover{border-color:var(--sol);transform:translateY(-1px)}
-.btn.primary{background:linear-gradient(135deg,var(--sol),var(--sol-2));color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(244,130,58,.32)}
-.btn.agua{background:linear-gradient(135deg,var(--agua),var(--agua-2));color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(14,148,148,.3)}
+.btn.primary{background:linear-gradient(135deg,var(--sol),var(--sol-2));color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(201,74,63,.30)}
+.btn.agua{background:linear-gradient(135deg,var(--agua),var(--agua-2));color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(47,122,108,.28)}
 .btn.wa{background:#25d366;border-color:transparent;color:#053d17;box-shadow:0 4px 14px rgba(37,211,102,.35)}
 .btn.sm{padding:8px 14px;font-size:13.5px;min-height:40px}
 .btn.block{width:100%}
@@ -225,3 +225,12 @@ footer .lk{background:none;border:none;color:var(--muted);text-decoration:underl
 /* --- mas aire y luz en el cuerpo --- */
 body{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 340px)}
 .card{background:var(--surface)}
+
+/* --- marca real de Ester Cortez --- */
+.logo .mark{background:#fff;border:1px solid var(--border);box-shadow:var(--shadow-sm);padding:5px;overflow:hidden}
+.logo .mark img{width:100%;height:100%;object-fit:contain;display:block}
+.herologo{max-width:min(260px,62vw);filter:drop-shadow(0 8px 22px rgba(0,0,0,.35))}
+@media (max-width:480px){.herologo{max-width:min(210px,58vw)}}
+.foot-logo{max-width:210px;height:auto;margin:0 auto 14px;display:block}
+
+.logo .mark{background:#fff}
