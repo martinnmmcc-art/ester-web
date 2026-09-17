@@ -3,6 +3,8 @@ import { getConfig, SITE_URL, MODO_DEMO } from "../lib/supabase";
 import Header from "../components/Header";
 import Fab from "../components/Fab";
 
+export const viewport = { themeColor: "#fffaf3", colorScheme: "light" };
+
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
